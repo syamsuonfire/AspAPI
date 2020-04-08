@@ -28,12 +28,12 @@ namespace API.Controllers
         // POST API/Department
         public IHttpActionResult Post(Department departments)
         {
-            var post = department.Create(departments);
-            if (post > 0)
+            if ((departments.DepartmentName != null) && (departments.DepartmentName != ""))
             {
-                return Ok("Department Added Succesfully!");
+                department.Create(departments);
+                return Ok("Department Insert Succesfully!"); 
             }
-            return BadRequest("Failed to Add Department");
+            return BadRequest("Failed to Insert Department");
         }
 
 
@@ -48,9 +48,9 @@ namespace API.Controllers
         // UPDATE API/Department
         public IHttpActionResult Put (int Id, Department departments)
         {
-            var put = department.Update(Id, departments);
-            if (put > 0)
+            if ((departments.DepartmentName != null) && (departments.DepartmentName != ""))
             {
+                department.Update(Id, departments);
                 return Ok("Department Updated Succesfully!");
             }
             return BadRequest("Failed to Update Department");

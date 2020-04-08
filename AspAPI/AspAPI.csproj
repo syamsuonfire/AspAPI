@@ -189,6 +189,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Mini AdminPro\assets\images\alert\alert.png" />
     <Content Include="Content\Mini AdminPro\assets\images\alert\alert2.png" />
     <Content Include="Content\Mini AdminPro\assets\images\alert\alert3.png" />
@@ -3997,12 +4001,17 @@
     <Content Include="Content\Mini AdminPro\main\scss\variable.scss" />
     <Content Include="Content\Mini AdminPro\main\scss\widgets.scss" />
     <Content Include="Content\Mini AdminPro\main\table-data-table.html" />
+    <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\DepartmentScript.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

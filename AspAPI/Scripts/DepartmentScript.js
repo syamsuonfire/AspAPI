@@ -1,51 +1,41 @@
 ﻿$(document).ready(function () {
     $('#Department').dataTable({
-        "ajax": loadDataDepartment(),
-        "responsive": true,
-    });
-    $('[data-toggle="tooltip"]').tooltip();
-});
-
-
-
-function loadDataDepartment() { //naming bebas
-    $.ajax({
-        url: "/Department/LoadDepartment", //manggil ke controller. /Controller/NamaClassuntukmenampilkandata
-        type: "GET",
-        contentType: "application/json;charset=utf-8",
-        dataType: "json",
-        success: function (result) {
-            debugger;
-            var html = '';
-            $.each(result, function (key, Department) { //attribut function setelah key bebas ("Department"). Sesuaikan dengan nama controller lebih baik
-                html += '<tr>';
-                html += '<td>' + Department.DepartmentName + '</td>';
-                html += '<td>' + moment(Department.CreateDate).format('DD-MM-YYYY') + '</td>';
-                if (Department.UpdateDate == null) {
-                    html += '<td> Not Updated yet </td>';
-                }
-                else {
-                    html += '<td>' + moment(Department.UpdateDate).format('DD-MM-YYYY') + '</td>';
-                }
-                html += '<td><button type="button" class="btn btn-warning" id="Update" onclick="return GetById(' + Department.Id + ')">Edit</button> ';
-                html += '<button type="button" class="btn btn-danger" id="Delete" onclick="return Delete(' + Department.Id + ')" >Delete</button ></td > ';
-                html += '</tr>';
-            });
-            $('.departmentbody').html(html);
+        "ajax": {
+            url: "/Department/LoadDepartment",
+            type: "GET",
+            dataType: "json",
+            dataSrc: "",
         },
-        error: function (errormessage) {
-            alert(errormessage.responseText);
-        }
+        "columns": [
+            { "name": "Department Name", "data": "DepartmentName", "autoWidth": true},
+            { "data": "CreateDate", "render": function (data) { return moment(data).format('MMMM Do YYYY');}},
+            { "data": "UpdateDate", "render": function (data) 
+            { var dateupdate = "Not Updated Yet";
+              var nulldate = null;
+              if (data == nulldate) {
+               return dateupdate;
+               } else {
+                  return moment(data).format('MMMM Do YYYY');
+                    }
+                }
+            },
+            {
+                data: null, render: function (data, type, dept) {
+                    return " <td><button type='button' class='btn btn-warning' id='Update' onclick=$('#EditBtn').show();GetById('" + dept.Id + "');>Edit</button> <button type='button' class='btn btn-danger' id='Delete' onclick=Delete('" + dept.Id + "');>Delete</button ></td >";
+                }
+            },
+        ]
     });
-}
-
+});
 
 function Delete(Id) {
     Swal.fire({
         title: "Do you want to delete it?",
         text: "You won't be able to restore this!",
         showCancelButton: true,
-        confirmButtonText: "Yes, delete it!"
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
         if (result.value) {
             $.ajax({
@@ -60,7 +50,7 @@ function Delete(Id) {
                         title: 'Department Delete Successfully',
                     }).then((result) => {
                         if (result.value) {
-                            location.reload()
+                            $('#Department').DataTable().ajax.reload();
                         }
                     });
                 }
@@ -80,13 +70,12 @@ function Delete(Id) {
 function Save() {
     if ($('#DepartmentName').val() == 0) {
         Swal.fire({
-            position: 'center',
-            type: 'error',
-            title: 'Please Full Fill The Department Name',
-            showConfirmButton: false,
-            timer: 1500
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong!',
+            footer: '<a href>Please Full Fill The Department Name</a>'
         });
-        location.reload();
+        $('#Department').DataTable().ajax.reload();
     }
     else {
         var Department = new Object();
@@ -105,7 +94,7 @@ function Save() {
                     title: 'Department Added Successfully',
                 }).then((result) => {
                     if (result.value) {
-                        location.reload()
+                        $('#Department').DataTable().ajax.reload();
                     }
                 });
             }
@@ -157,13 +146,12 @@ function GetById(Id) {
 function Edit() {
     if ($('#DepartmentName').val() == 0) {
         Swal.fire({
-            position: 'center',
-            type: 'error',
-            title: 'Please Full Fill The Department Name',
-            showConfirmButton: false,
-            timer: 1500
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong!',
+            footer: '<a href>Please Full Fill The Department Name</a>'
         });
-        location.reload();
+        $('#Department').DataTable().ajax.reload();
     }
     else {
         var Department = new Object();
@@ -181,7 +169,7 @@ function Edit() {
                     title: 'Department Updated Successfully',
                 }).then((result) => {
                     if (result.value) {
-                        location.reload()
+                        $('#Department').DataTable().ajax.reload();
                     }
                 });
             }
