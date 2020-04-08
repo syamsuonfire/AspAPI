@@ -84,6 +84,7 @@ D:\Documents\Source-Code\AspAPI\API\bin\System.Web.WebPages.Deployment.xml
 D:\Documents\Source-Code\AspAPI\API\bin\System.Web.WebPages.Razor.xml
 D:\Documents\Source-Code\AspAPI\API\bin\Antlr3.Runtime.pdb
 D:\Documents\Source-Code\AspAPI\API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Documents\Source-Code\AspAPI\API\obj\Debug\API.csprojAssemblyReference.cache
 D:\Documents\Source-Code\AspAPI\API\obj\Debug\API.Migrations.adddepartmentmodel.resources
 D:\Documents\Source-Code\AspAPI\API\obj\Debug\API.csproj.GenerateResource.cache
 D:\Documents\Source-Code\AspAPI\API\obj\Debug\API.csproj.CoreCompileInputs.cache
