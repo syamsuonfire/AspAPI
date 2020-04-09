@@ -7,15 +7,15 @@
             dataSrc: "",
         },
         "columns": [
-            { "name": "Department Name", "data": "DepartmentName", "autoWidth": true},
-            { "data": "CreateDate", "render": function (data) { return moment(data).format('MMMM Do YYYY');}},
+            { "name": "Department Name", "data": "DepartmentName"},
+            { "data": "CreateDate", "render": function (data) { return moment(data).format('MMMM Do YYYY, h:mm:ss a');}},
             { "data": "UpdateDate", "render": function (data) 
             { var dateupdate = "Not Updated Yet";
               var nulldate = null;
               if (data == nulldate) {
                return dateupdate;
                } else {
-                  return moment(data).format('MMMM Do YYYY');
+                  return moment(data).format('MMMM Do YYYY, h:mm:ss a');
                     }
                 }
             },

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29920.165
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspAPI", "AspAPI\AspAPI.csproj", "{63F5DA31-1FE2-4820-8D81-DD0A24907301}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "AspAPI\Client.csproj", "{63F5DA31-1FE2-4820-8D81-DD0A24907301}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{9B9D1338-5EFB-467E-B820-4AB00BC2CE53}"
 EndProject

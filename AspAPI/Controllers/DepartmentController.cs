@@ -1,4 +1,5 @@
 ﻿using API.Models;
+using API.ViewModel;
 using Newtonsoft.Json;
 using System;
 using System.Collections;
@@ -73,7 +74,7 @@ namespace AspAPI.Controllers
                 var dept = data.FirstOrDefault(S => S.Id == id);
                 var json = JsonConvert.SerializeObject(dept, Formatting.None, new JsonSerializerSettings()
                 {
-                    ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
                 });
                 return new JsonResult { Data = json, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
             }

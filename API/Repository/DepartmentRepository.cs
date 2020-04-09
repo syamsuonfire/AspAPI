@@ -17,16 +17,16 @@ namespace API.Repository
         SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["BelajarAPI"].ConnectionString);
 
         DynamicParameters parameters = new DynamicParameters();
-        public int Create(Department department)
+        public int Create(Department department) //insert to database
         {
             var procName = "SP_InsertDepartment";
-            parameters.Add("@DepartmentName", department.DepartmentName);
+            parameters.Add("@pDeptName", department.DepartmentName);
             var create = connection.Execute(procName, parameters, commandType: CommandType.StoredProcedure);
             return create;
         }
 
 
-        public IEnumerable<Department> Get()
+        public IEnumerable<Department> Get() //view database
         {
             var procName = "SP_ViewDepartment";
             var getalldept= connection.Query<Department>(procName, commandType: CommandType.StoredProcedure);
@@ -34,33 +34,31 @@ namespace API.Repository
         }
 
 
-        public async Task<IEnumerable<Department>> Get(int Id)
+        public async Task<IEnumerable<Department>> Get(int Id) //get id from database
         {
             var procName = "SP_GetDepartmentbyID";
-            parameters.Add("@DeptId", Id);
+            parameters.Add("@pDeptId", Id);
 
             var get = await connection.QueryAsync<Department>(procName, parameters, commandType: CommandType.StoredProcedure);
             return get;
         }
 
-        public int Update(int Id, Department department)
+        public int Update(int Id, Department department) //update yo database
         {
             var procName = "SP_UpdateDepartment";
-            parameters.Add("@Id", Id);
-            parameters.Add("@Name", department.DepartmentName);
+            parameters.Add("@pDeptId", Id);
+            parameters.Add("@pDeptName", department.DepartmentName);
             var update = connection.Execute(procName, parameters, commandType: CommandType.StoredProcedure);
             return update;
         }
 
-        public int Delete (int Id)
+        public int Delete (int Id) //delete to database
         {
             var procName = "SP_DeleteDepartment";
-            parameters.Add("@Id", Id);
+            parameters.Add("@pDeptId", Id);
             var delete = connection.Execute(procName, parameters, commandType: CommandType.StoredProcedure);
             return delete;
         }
-
-
 
     }
 }
