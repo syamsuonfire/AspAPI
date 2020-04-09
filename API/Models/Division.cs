@@ -23,9 +23,9 @@ namespace API.Models
 
         public DateTimeOffset CreateDate { get; set; }
 
-        public DateTimeOffset? UpdateDate { get; set; }
+        public DateTimeOffset UpdateDate { get; set; }
 
-        public DateTimeOffset? DeleteDate { get; set; }
+        public DateTimeOffset DeleteDate { get; set; }
 
         [ForeignKey("Department")]
         public int Department_Id { get; set; } //manual virtual foreign key

@@ -11,8 +11,8 @@ namespace API.ViewModel
         public string DivisionName { get; set; }
         public bool IsDelete { get; set; }
         public DateTimeOffset CreateDate { get; set; }
-        public DateTimeOffset? UpdateDate { get; set; }
-        public DateTimeOffset? DeleteDate { get; set; }
+        public DateTimeOffset UpdateDate { get; set; }
+        public DateTimeOffset DeleteDate { get; set; }
         public int Department_Id { get; set; }
         public string DepartmentName { get; set; }
     }
