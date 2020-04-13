@@ -27,6 +27,12 @@
     <!-- Trigger the modal with a button -->
     <p>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="ClearScreen();">Create New</button>
+        <div>
+            <button onclick="location.href='@Url.Action("PDF", "Division")'" type="button" class="btn btn-info button button4"> PDF </button>
+            <button onclick="location.href='@Url.Action("Excel", "Division")'" type="button" class="btn btn-info button button4"> XLS </button>
+            <button onclick="location.href='@Url.Action("CSV", "Division")'" type="button" class="btn btn-info button button4"> CSV </button>
+        </div>
+
     </p>
 
 

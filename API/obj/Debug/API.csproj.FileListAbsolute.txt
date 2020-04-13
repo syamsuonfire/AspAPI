@@ -91,4 +91,3 @@ D:\Documents\Source-Code\AspAPI\API\obj\Debug\API.csproj.CoreCompileInputs.cache
 D:\Documents\Source-Code\AspAPI\API\obj\Debug\API.csproj.CopyComplete
 D:\Documents\Source-Code\AspAPI\API\obj\Debug\API.dll
 D:\Documents\Source-Code\AspAPI\API\obj\Debug\API.pdb
-D:\Documents\Source-Code\AspAPI\API\obj\Debug\API.csprojAssemblyReference.cache

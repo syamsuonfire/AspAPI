@@ -54,6 +54,8 @@ D:\Documents\Source-Code\AspAPI\AspAPI\bin\Antlr3.Runtime.dll
 D:\Documents\Source-Code\AspAPI\AspAPI\bin\API.dll
 D:\Documents\Source-Code\AspAPI\AspAPI\bin\EntityFramework.dll
 D:\Documents\Source-Code\AspAPI\AspAPI\bin\EntityFramework.SqlServer.dll
+D:\Documents\Source-Code\AspAPI\AspAPI\bin\EPPlus.dll
+D:\Documents\Source-Code\AspAPI\AspAPI\bin\itextsharp.dll
 D:\Documents\Source-Code\AspAPI\AspAPI\bin\Microsoft.AspNet.Identity.Core.dll
 D:\Documents\Source-Code\AspAPI\AspAPI\bin\Microsoft.AspNet.Identity.EntityFramework.dll
 D:\Documents\Source-Code\AspAPI\AspAPI\bin\Microsoft.AspNet.Identity.Owin.dll
@@ -84,6 +86,8 @@ D:\Documents\Source-Code\AspAPI\AspAPI\bin\Dapper.dll
 D:\Documents\Source-Code\AspAPI\AspAPI\bin\System.Web.Http.WebHost.dll
 D:\Documents\Source-Code\AspAPI\AspAPI\bin\API.pdb
 D:\Documents\Source-Code\AspAPI\AspAPI\bin\API.dll.config
+D:\Documents\Source-Code\AspAPI\AspAPI\bin\EPPlus.xml
+D:\Documents\Source-Code\AspAPI\AspAPI\bin\itextsharp.xml
 D:\Documents\Source-Code\AspAPI\AspAPI\bin\System.Net.Http.Formatting.xml
 D:\Documents\Source-Code\AspAPI\AspAPI\bin\System.Web.Helpers.xml
 D:\Documents\Source-Code\AspAPI\AspAPI\bin\System.Web.Mvc.xml
